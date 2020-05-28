@@ -39,7 +39,7 @@ class QuestionController extends Controller
     {
         // Auth()->user()->question()->create($request->all());
         Question::create($request->all());
-        return response('Created',201);
+        return response('New Question Created',201);
     }
 
     /**
@@ -73,7 +73,8 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->update($request->all());
+        return response('Question updated',201);
     }
 
     /**
@@ -84,7 +85,7 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        $question->delete;
-        return response('Deleted',204);
+        $question->delete();
+        return response('Question Deleted',204);
     }
 }
