@@ -2038,6 +2038,13 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
+  created: function created() {
+    if (User.loggedIn()) {
+      this.$router.push({
+        name: 'forum'
+      });
+    }
+  },
   methods: {
     login: function login() {
       User.login(this.form);
@@ -2135,6 +2142,13 @@ __webpack_require__.r(__webpack_exports__);
       errors: {}
     };
   },
+  created: function created() {
+    if (User.loggedIn()) {
+      this.$router.push({
+        name: 'forum'
+      });
+    }
+  },
   methods: {
     signup: function signup() {
       var _this = this;
@@ -2186,10 +2200,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      items: [{
+        title: 'Forum',
+        to: '/forum',
+        show: true
+      }, {
+        title: 'Ask Question',
+        to: '/ask-question',
+        show: User.loggedIn()
+      }, {
+        title: 'Category',
+        to: '/category',
+        show: User.loggedIn()
+      }, {
+        title: 'Login',
+        to: '/login',
+        show: !User.loggedIn()
+      }, {
+        title: 'Logout',
+        to: '/logout',
+        show: User.loggedIn()
+      }]
+    };
+  }
+});
 
 /***/ }),
 
@@ -38710,63 +38747,22 @@ var render = function() {
       _vm._v(" "),
       _c("v-spacer"),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "my-2 mr-2" },
-        [
-          _c(
-            "router-link",
-            { attrs: { to: "/forum" } },
-            [_c("v-btn", { attrs: { text: "" } }, [_vm._v("Forum")])],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "my-2 mr-2" },
-        [
-          _c(
-            "router-link",
-            { attrs: { to: "" } },
-            [_c("v-btn", { attrs: { text: "" } }, [_vm._v("Ask Question")])],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "my-2 mr-2" },
-        [
-          _c(
-            "router-link",
-            { attrs: { to: "" } },
-            [_c("v-btn", { attrs: { text: "" } }, [_vm._v("Category")])],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "my-2 mr-2" },
-        [
-          _c(
-            "router-link",
-            { attrs: { to: "/login" } },
-            [_c("v-btn", { attrs: { text: "" } }, [_vm._v("Login")])],
-            1
-          )
-        ],
-        1
-      )
+      _vm._l(_vm.items, function(item) {
+        return item.show
+          ? _c(
+              "router-link",
+              { key: item.title, attrs: { to: item.to } },
+              [
+                _c("v-btn", { attrs: { text: "" } }, [
+                  _vm._v(_vm._s(item.title))
+                ])
+              ],
+              1
+            )
+          : _vm._e()
+      })
     ],
-    1
+    2
   )
 }
 var staticRenderFns = []

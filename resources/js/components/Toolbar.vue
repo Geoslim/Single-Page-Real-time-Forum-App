@@ -9,19 +9,16 @@
 
  
 
-      <div class="my-2 mr-2">
-        <router-link to="/forum"><v-btn text >Forum</v-btn></router-link>
-      </div>
+      
+        <router-link 
+        v-for="item in items"
+        :key="item.title"
+        :to="item.to"
+        v-if="item.show">
+        <v-btn text >{{ item.title }}</v-btn>
+        </router-link>
+     
 
-      <div class="my-2 mr-2">
-         <router-link to=""><v-btn text >Ask Question</v-btn></router-link>
-      </div>
-      <div class="my-2 mr-2">
-         <router-link to=""><v-btn text >Category</v-btn></router-link>
-      </div>
-      <div class="my-2 mr-2">
-        <router-link to="/login"><v-btn text >Login</v-btn></router-link>
-      </div>
       
     </v-toolbar>
  
@@ -30,6 +27,18 @@
 <script>
 export default {
 
+data(){
+  return {
+    items:[
+      {title : 'Forum', to:'/forum', show: true },
+      {title : 'Ask Question', to:'/ask-question', show: User.loggedIn() },
+      {title : 'Category', to:'/category', show: User.loggedIn() },
+      {title : 'Login', to:'/login', show: !User.loggedIn() },
+      {title : 'Logout', to:'/logout', show: User.loggedIn() },
+
+    ]
+  }
+}
 }
 </script>
 
