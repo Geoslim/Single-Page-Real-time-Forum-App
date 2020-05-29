@@ -19,7 +19,6 @@ window.User = User
     // console.log(User.id())
     // User.logout()
 
-
 //import the router into the main app
 import router from './Router/router.js'
 
@@ -44,6 +43,6 @@ Vue.component('app-home', require('./components/HomeComponent.vue').default);
  */
 const app = new Vue({
     el: '#app',
-    vuetify: new Vuetify(),
-    router,
+    vuetify: new Vuetify(), // instansiate vuetify 
+    router, // add vue router 
 });

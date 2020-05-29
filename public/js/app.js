@@ -95742,7 +95742,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('app-home', __webpack_requi
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   vuetify: new vuetify__WEBPACK_IMPORTED_MODULE_1___default.a(),
-  router: _Router_router_js__WEBPACK_IMPORTED_MODULE_4__["default"]
+  // instansiate vuetify 
+  router: _Router_router_js__WEBPACK_IMPORTED_MODULE_4__["default"] // add vue router 
+
 });
 
 /***/ }),
