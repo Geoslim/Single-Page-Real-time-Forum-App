@@ -20,7 +20,6 @@ class CategoryController extends Controller
     {
         $this->middleware('JWT', ['except' => ['index', 'show']]);
     }
-
     
     /**
      * Display a listing of the resource.
@@ -30,16 +29,6 @@ class CategoryController extends Controller
     public function index()
     {
         return CategoryResource::collection(Category::latest()->get());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -68,17 +57,6 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         return new CategoryResource($category);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
-    {
-        //
     }
 
     /**

@@ -18,7 +18,6 @@ class LikeController extends Controller
         $this->middleware('JWT');
     }
 
-
     public function like(Reply $reply)
     {
         $reply->likes()->create([
