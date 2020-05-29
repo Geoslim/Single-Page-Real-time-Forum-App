@@ -17,8 +17,6 @@ class Category extends Model
         return asset("api/categories/$this->slug");
     }
 
-
-    
     public function questions()
     {
         return $this->hasMany(Question::class);
