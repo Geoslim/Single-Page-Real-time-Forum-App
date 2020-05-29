@@ -12,8 +12,8 @@
 
 import Toolbar from "./Toolbar";
 import AppFooter from "./AppFooter";
-import Login from "./Login/Login";
-import SignUp from "./Login/SignUp";
+import Login from "./Auth/Login";
+import SignUp from "./Auth/SignUp";
 
 export default {
     components:{Toolbar, AppFooter, Login, SignUp}

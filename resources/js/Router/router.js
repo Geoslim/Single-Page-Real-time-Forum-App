@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Login from '../components/Login/Login'
-import SignUp from '../components/Login/SignUp'
-import Logout from '../components/Login/Logout'
+import Login from '../components/Auth/Login'
+import SignUp from '../components/Auth/SignUp'
+import Logout from '../components/Auth/Logout'
 import Forum from '../components/Forum/Forum'
 
 const routes = [
