@@ -4,9 +4,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Login from '../components/Login/Login'
+import SignUp from '../components/Login/SignUp'
+import Forum from '../components/Forum/Forum'
+
 const routes = [
     { path: '/login', component: Login },
-    // { path: '/bar', component: Bar }
+    { path: '/signup', component: SignUp },
+    { path: '/forum', name: 'forum', component: Forum }
 ]
 
 

@@ -28,6 +28,12 @@
                     type="submit"
                     color="green"
                     >Login</v-btn>
+
+                      <div class="ml-2">
+                        <router-link to="/signup">
+                        <v-btn color="primary" >Sign Up</v-btn>
+                        </router-link>
+                    </div>
                 </v-card-actions>
 
             </v-form >
@@ -52,6 +58,7 @@ export default {
     methods:{
         login() {
            User.login(this.form)
+            
         }
     }
 }
