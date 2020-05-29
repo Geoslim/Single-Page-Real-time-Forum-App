@@ -1,6 +1,5 @@
 class Token {
 
-
     isValid(token) {
         const payload = this.payload(token);
         if (payload) {
@@ -21,4 +20,5 @@ class Token {
     }
 
 }
+
 export default Token = new Token();
