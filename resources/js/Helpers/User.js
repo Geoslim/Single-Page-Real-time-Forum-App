@@ -23,7 +23,7 @@ class User {
         if (Token.isValid(access_token)) {
             // console.log(access_token)
             AppStorage.store(username, access_token)
-            router.push({ name: 'forum' })
+            window.location = '/forum'
         }
     }
 
@@ -31,6 +31,7 @@ class User {
         const storedToken = AppStorage.getToken();
         if (storedToken) {
             return Token.isValid(storedToken) ? true : false
+
         }
         return false
     }
@@ -41,6 +42,7 @@ class User {
 
     logout() {
         AppStorage.clear()
+        window.location = '/forum'
     }
 
     name() {

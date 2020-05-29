@@ -16,8 +16,10 @@ Vue.use(Vuetify)
 import User from './Helpers/User'
 
 window.User = User
-console.log(User.loggedIn())
-    // User.logout()
+
+window.EventBus = new Vue();
+// console.log(User.loggedIn())
+// User.logout()
 
 //import the router into the main app
 import router from './Router/router.js'
